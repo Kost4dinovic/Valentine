@@ -55,14 +55,15 @@ h1 {
 }
 
 #yes {
-  padding: 18px 48px;
-  font-size: 24px;
+  font-size: 28px;
+  padding: 20px 50px;
+  border-radius: 15px;
   border: none;
-  border-radius: 40px;
   background: hotpink;
   color: white;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  z-index: 100; /* 👈 IZNAD SLIKA */
+  pointer-events: auto;
 }
 
 #yes:focus,
