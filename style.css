@@ -1,34 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   background: #ffe6ef;
   font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: center;
 }
 
 h1 {
-  margin-top: 50px;
+  margin-top: 30px;
+  font-size: 32px;
 }
 
-img {
-  width: 200px;
-  margin: 20px;
+/* ================= IMAGES ================= */
+
+#image-area {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
 }
 
-.buttons {
-  position: relative;
-  height: 300px;
+.cute-img {
+  position: absolute;
+  width: 140px;
+  animation: fadeIn 0.4s ease-in;
 }
 
-button {
-  padding: 15px 30px;
-  font-size: 20px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= YES ================= */
+
+.yes-area {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#yes {
+  padding: 16px 42px;
+  font-size: 22px;
+  border: none;
+  border-radius: 40px;
+  background: hotpink;
+  color: white;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#yes:focus,
+#yes:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ================= NO ================= */
+
+.no-area {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 260px;
+  z-index: 9;
 }
 
 #no {
   position: absolute;
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ccc;
+  cursor: pointer;
 }
 
-#yes {
-  background: hotpink;
-  color: white;
+#no:focus,
+#no:active {
+  outline: none;
+  box-shadow: none;
 }
