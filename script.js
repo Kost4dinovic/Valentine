@@ -6,14 +6,12 @@ let yesScale = 1;
 let currentImage = 1;
 const TOTAL_IMAGES = 11;
 
-// NO dugme beži, dodaje novu sliku
 function escapeNo() {
   moveNoButton();
   spawnImage();
   growYes();
 }
 
-// pomeranje NO dugmeta (u njegovoj zoni)
 function moveNoButton() {
   const area = document.querySelector(".no-area");
   const maxX = area.clientWidth - noBtn.offsetWidth;
@@ -23,16 +21,18 @@ function moveNoButton() {
   noBtn.style.top = Math.random() * maxY + "px";
 }
 
-// dodavanje slike na RANDOM mestu (i ostaje tu)
 function spawnImage() {
-  if (currentImage > TOTAL_IMAGES) return;
+  // ako smo došli do kraja → KRENI OPET
+  if (currentImage > TOTAL_IMAGES) {
+    currentImage = 1;
+  }
 
   const img = document.createElement("img");
   img.src = `images/cute${currentImage}.png`;
   img.classList.add("cute-img");
 
   const maxX = window.innerWidth - 150;
-  const maxY = window.innerHeight - 200;
+  const maxY = window.innerHeight - 150;
 
   img.style.left = Math.random() * maxX + "px";
   img.style.top = Math.random() * maxY + "px";
@@ -41,13 +41,11 @@ function spawnImage() {
   currentImage++;
 }
 
-// YES dugme raste
 function growYes() {
   yesScale += 0.08;
   yesBtn.style.transform = `scale(${yesScale})`;
 }
 
-// EVENTI
 noBtn.addEventListener("mouseover", escapeNo);
 noBtn.addEventListener("touchstart", escapeNo);
 
