@@ -47,11 +47,11 @@ h1 {
 
 .yes-area {
   position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
+  pointer-events: none; /* 👈 KLJUČNO */
 }
 
 #yes {
