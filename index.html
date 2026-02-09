@@ -9,14 +9,18 @@
 
   <h1>Will you be my Valentine? 💘</h1>
 
-  <img id="cuteImage" src="images/cute1.png">
+  <!-- zona gde se slike RANDOM pojavljuju i OSTAJU -->
+  <div id="image-area"></div>
 
-  <div class="buttons">
+  <!-- YES dugme odvojeno dole -->
+  <div class="yes-area">
     <button id="yes">YES 💖</button>
-    <button id="no">NO 😢</button>
   </div>
 
-  <canvas id="confetti"></canvas>
+  <!-- NO dugme ima svoju zonu (ne može da se sudari sa YES) -->
+  <div class="no-area">
+    <button id="no">NO 😢</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
