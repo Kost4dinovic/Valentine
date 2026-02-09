@@ -44,17 +44,19 @@ h1 {
 
 /* ================= YES ================= */
 
+/* YES CENTAR */
 .yes-area {
   position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
 }
 
 #yes {
-  padding: 16px 42px;
-  font-size: 22px;
+  padding: 18px 46px;
+  font-size: 24px;
   border: none;
   border-radius: 40px;
   background: hotpink;
